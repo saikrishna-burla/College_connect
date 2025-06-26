@@ -1,0 +1,48 @@
+/* styles/auth.css */
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.auth-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('C:/Users/SAIKRISHNA/OneDrive/Desktop/campus_connect/client/src/assets/bgimg.jpg') no-repeat center center / cover;
+  z-index: 0;
+}
+
+.auth-box {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* ✅ Responsive adjustments */
+@media (max-width: 600px) {
+  .auth-box {
+    padding: 1rem;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .auth-container {
+    padding: 0.5rem;
+  }
+}
