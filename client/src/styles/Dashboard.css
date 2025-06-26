@@ -1,7 +1,7 @@
 .dashboard-bg {
   height: 100vh;
   width: 100%;
-  background-image: url('C:/Users/SAIKRISHNA/OneDrive/Desktop/campus_connect/client/src/assets/bgimg.jpg');
+  background-image: url('../assets/bgimg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
