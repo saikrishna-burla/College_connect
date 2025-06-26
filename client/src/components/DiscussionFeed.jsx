@@ -16,7 +16,7 @@ const DiscussionFeed = ({ user, category, token }) => {
 
   const fetchQuestions = async () => {
     try{ const res = await axios.get(
-       `http://localhost:5000/api/discussions/${user.college}/${category}`,
+       `https://college-connect-98vs.onrender.com/discussions/${user.college}/${category}`,
        { headers: { Authorization: `Bearer ${token}` } }
      );
       setQuestions(res.data);
@@ -36,7 +36,7 @@ const DiscussionFeed = ({ user, category, token }) => {
   const postQuestion = async () => {
     if (!newQuestion.trim()) return;
     await axios.post(
-      'http://localhost:5000/api/discussions/ask',
+      'https://college-connect-98vs.onrender.com/api/discussions/ask',
       {
         college: user.college,
         category,
@@ -51,7 +51,7 @@ const DiscussionFeed = ({ user, category, token }) => {
   const replyToQuestion = async (id, message) => {
     if (!message.trim()) return;
     await axios.post(
-      `http://localhost:5000/api/discussions/reply/${id}`,
+      `https://college-connect-98vs.onrender.com/discussions/reply/${id}`,
       { message },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -61,7 +61,7 @@ const DiscussionFeed = ({ user, category, token }) => {
   const replyToReply = async (questionId, replyId, message) => {
     if (!message.trim()) return;
     await axios.post(
-      `http://localhost:5000/api/discussions/${questionId}/reply/${replyId}`,
+      `https://college-connect-98vs.onrender.com/api/discussions/${questionId}/reply/${replyId}`,
       { message },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -70,7 +70,7 @@ const DiscussionFeed = ({ user, category, token }) => {
 
   const deleteQuestion = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/discussions/${id}`, {
+      await axios.delete(`https://college-connect-98vs.onrender.com/api/discussions/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchQuestions();
@@ -82,7 +82,7 @@ const DiscussionFeed = ({ user, category, token }) => {
   const deleteReply = async (questionId, replyId) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/discussions/${questionId}/reply/${replyId}`,
+        `https://college-connect-98vs.onrender.com/api/discussions/${questionId}/reply/${replyId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       fetchQuestions();
@@ -94,7 +94,7 @@ const DiscussionFeed = ({ user, category, token }) => {
   const deleteNestedReply = async (questionId, replyId, nestedReplyId) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/discussions/${questionId}/reply/${replyId}/nested/${nestedReplyId}`,
+        `https://college-connect-98vs.onrender.com/api/discussions/${questionId}/reply/${replyId}/nested/${nestedReplyId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       fetchQuestions();

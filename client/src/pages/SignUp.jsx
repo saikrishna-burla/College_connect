@@ -68,7 +68,7 @@ const Signup = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/signup', formData);
+      const res = await axios.post('https://college-connect-98vs.onrender.com/api/auth/signup', formData);
      const { user, token } = res.data;
  localStorage.setItem('user', JSON.stringify(user));
  localStorage.setItem('token', token);
