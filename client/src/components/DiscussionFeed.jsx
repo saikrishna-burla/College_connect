@@ -16,7 +16,7 @@ const DiscussionFeed = ({ user, category, token }) => {
 
   const fetchQuestions = async () => {
     try{ const res = await axios.get(
-       `https://college-connect-98vs.onrender.com/discussions/${user.college}/${category}`,
+       `https://college-connect-98vs.onrender.com/api/discussions/${user.college}/${category}`,
        { headers: { Authorization: `Bearer ${token}` } }
      );
       setQuestions(res.data);
