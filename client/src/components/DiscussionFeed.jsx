@@ -51,7 +51,7 @@ const DiscussionFeed = ({ user, category, token }) => {
   const replyToQuestion = async (id, message) => {
     if (!message.trim()) return;
     await axios.post(
-      `https://college-connect-98vs.onrender.com/discussions/reply/${id}`,
+      `https://college-connect-98vs.onrender.com/api/discussions/reply/${id}`,
       { message },
       { headers: { Authorization: `Bearer ${token}` } }
     );
